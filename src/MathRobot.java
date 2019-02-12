@@ -1,4 +1,7 @@
 import java.awt.FlowLayout;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.*;
 
 public class MathRobot {
@@ -18,13 +21,64 @@ public class MathRobot {
 	static JButton isPrimeNumber = new JButton("Prime Number Test");
 	public static void main(String[] args)
 	{
+		// This line stops the program when the window is closed.  It is very important.
+		main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// This line arranges the label and buttons horizontally.
 		horizontal.setLayout(new BoxLayout(horizontal, BoxLayout.PAGE_AXIS));
 		// Please do not change the following line.
 		buttonPanel.setLayout(new FlowLayout());
-		// We have to add all of the buttons to the buttonPanel, like what is shown below.
+		// We have to add all of the buttons to the buttonPanel, like what is shown below.  Each button also needs to have a MouseListener added, and its action can be placed in the mouseClicked method.
 		buttonPanel.add(addition);
+		addition.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int numberOne = Integer.parseInt(JOptionPane.showInputDialog("Enter the first number."));
+				int numberTwo = Integer.parseInt(JOptionPane.showInputDialog("Enter the second number."));
+				JOptionPane.showMessageDialog(null, "The answer is " + Integer.toString((numberOne + numberTwo)) + ".", "Your Answer", JOptionPane.PLAIN_MESSAGE, null);
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+			}
+		});
 		buttonPanel.add(subtraction);
+		subtraction.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				int numberOne = Integer.parseInt(JOptionPane.showInputDialog("Enter the first number."));
+				int numberTwo = Integer.parseInt(JOptionPane.showInputDialog("Enter the second number"));
+				JOptionPane.showMessageDialog(null, "The answer is " + Integer.toString(numberOne - numberTwo) + ".", "Your Answer", JOptionPane.PLAIN_MESSAGE);
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 		buttonPanel.add(division);
 		buttonPanel.add(multiplication);
 		buttonPanel.add(isPrimeNumber);
