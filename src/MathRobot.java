@@ -5,11 +5,12 @@ import java.awt.event.MouseListener;
 import javax.swing.*;
 
 public class MathRobot {
-	// This is the main window frame.  Don't mess with it, or bad things can happen.
+	// This is the main window frame. Don't mess with it, or bad things can happen.
 	final static JFrame main = new JFrame("The Math Robot");
-	// This is the label that tells you to push a button.  Please do not change it.
+	// This is the label that tells you to push a button. Please do not change it.
 	static JLabel label = new JLabel("Press a button to use its labeled operation.");
-	// This is the JPanel that holds all of the buttons.  You can add your buttons to this panel to make them appear.
+	// This is the JPanel that holds all of the buttons. You can add your buttons to
+	// this panel to make them appear.
 	static JPanel buttonPanel = new JPanel();
 	// This JPanel holds the components together horizontally.
 	static JPanel horizontal = new JPanel();
@@ -19,22 +20,25 @@ public class MathRobot {
 	static JButton multiplication = new JButton("Multiplication");
 	static JButton division = new JButton("Division");
 	static JButton isPrimeNumber = new JButton("Prime Number Test");
-	public static void main(String[] args)
-	{
-		// This line stops the program when the window is closed.  It is very important.
+
+	public static void main(String[] args) {
+		// This line stops the program when the window is closed. It is very important.
 		main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// This line arranges the label and buttons horizontally.
 		horizontal.setLayout(new BoxLayout(horizontal, BoxLayout.PAGE_AXIS));
 		// Please do not change the following line.
 		buttonPanel.setLayout(new FlowLayout());
-		// We have to add all of the buttons to the buttonPanel, like what is shown below.  Each button also needs to have a MouseListener added, and its action can be placed in the mouseClicked method.
+		// We have to add all of the buttons to the buttonPanel, like what is shown
+		// below. Each button also needs to have a MouseListener added, and its action
+		// can be placed in the mouseClicked method.
 		buttonPanel.add(addition);
 		addition.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				int numberOne = Integer.parseInt(JOptionPane.showInputDialog("Enter the first number."));
 				int numberTwo = Integer.parseInt(JOptionPane.showInputDialog("Enter the second number."));
-				JOptionPane.showMessageDialog(null, "The answer is " + Integer.toString((numberOne + numberTwo)) + ".", "Your Answer", JOptionPane.PLAIN_MESSAGE, null);
+				JOptionPane.showMessageDialog(null, "The answer is " + Integer.toString((numberOne + numberTwo)) + ".",
+						"Your Answer", JOptionPane.PLAIN_MESSAGE, null);
 			}
 
 			@Override
@@ -55,34 +59,149 @@ public class MathRobot {
 		});
 		buttonPanel.add(subtraction);
 		subtraction.addMouseListener(new MouseListener() {
-			
+
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				int numberOne = Integer.parseInt(JOptionPane.showInputDialog("Enter the first number."));
-				int numberTwo = Integer.parseInt(JOptionPane.showInputDialog("Enter the second number"));
-				JOptionPane.showMessageDialog(null, "The answer is " + Integer.toString(numberOne - numberTwo) + ".", "Your Answer", JOptionPane.PLAIN_MESSAGE);
+
 			}
-			
+
 			@Override
 			public void mousePressed(MouseEvent e) {
 			}
-			
+
 			@Override
 			public void mouseExited(MouseEvent e) {
 			}
-			
+
 			@Override
 			public void mouseEntered(MouseEvent e) {
 			}
-			
+
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				int numberOne = Integer.parseInt(JOptionPane.showInputDialog("Enter the first number."));
+				int numberTwo = Integer.parseInt(JOptionPane.showInputDialog("Enter the second number"));
+				JOptionPane.showMessageDialog(null, "The answer is " + Integer.toString(numberOne - numberTwo) + ".",
+						"Your Answer", JOptionPane.PLAIN_MESSAGE);
+
 			}
 		});
 		buttonPanel.add(division);
+		division.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				float numberOne = Integer.parseInt(JOptionPane.showInputDialog("Enter the first number."));
+				float numberTwo = Integer.parseInt(JOptionPane.showInputDialog("Enter the second number."));
+				JOptionPane.showMessageDialog(null, "The answer is " + Float.toString(numberOne / numberTwo) + ".",
+						"Your Answer", JOptionPane.PLAIN_MESSAGE);
+			}
+		});
 		buttonPanel.add(multiplication);
+		multiplication.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				int numberOne = Integer.parseInt("Enter the first number.");
+				int numberTwo = Integer.parseInt("Enter the second number.");
+				JOptionPane.showMessageDialog(null, "The answer is " + Integer.toString(numberOne * numberTwo) + ".",
+						"Your Answer", JOptionPane.PLAIN_MESSAGE);
+			}
+		});
 		buttonPanel.add(isPrimeNumber);
-		// Please do not change the following five lines.  They are very important.
+		isPrimeNumber.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				int number = Integer.parseInt(JOptionPane.showInputDialog("Enter a number."));
+				String isPrime = " is prime.";
+				for(int i = 2; i < number; i++)
+				{
+					if(((float) number / (float) i) % 1 == 0)
+					{
+						isPrime = " is not prime.";
+					}
+				}
+				JOptionPane.showMessageDialog(main, Integer.toString(number) + isPrime, null, JOptionPane.PLAIN_MESSAGE);
+				System.out.println(JOptionPane.PLAIN_MESSAGE);
+			}
+		});
+		// Please do not change the following five lines. They are very important.
 		horizontal.add(label);
 		horizontal.add(buttonPanel);
 		main.add(horizontal);
