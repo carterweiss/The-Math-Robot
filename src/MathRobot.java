@@ -187,7 +187,6 @@ public class MathRobot {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 				int number = Integer.parseInt(JOptionPane.showInputDialog("Enter a number."));
 				String isPrime = " is prime.";
 				for(int i = 2; i < number; i++)
