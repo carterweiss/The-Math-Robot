@@ -152,8 +152,8 @@ public class MathRobot {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				// TODO Auto-generated method stub
-				int numberOne = Integer.parseInt("Enter the first number.");
-				int numberTwo = Integer.parseInt("Enter the second number.");
+				int numberOne = Integer.parseInt(JOptionPane.showInputDialog("Enter the first number."));
+				int numberTwo = Integer.parseInt(JOptionPane.showInputDialog("Enter the second number."));
 				JOptionPane.showMessageDialog(null, "The answer is " + Integer.toString(numberOne * numberTwo) + ".",
 						"Your Answer", JOptionPane.PLAIN_MESSAGE);
 			}
